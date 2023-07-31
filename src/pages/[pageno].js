@@ -35,17 +35,19 @@ export const getStaticProps = async (context) => {
 };
 const Dynamic = ({ data }) => {
   //niche is see ko use kro
+  const { id, title, body } = data;
   return (
     <>
       <div
         className="absolute flex justify-center items-center flex-col h-full w-full"
-        key={data.id}
+        // key={data.id} // no need
       >
-        <p className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 w-72 sm:w-96 text-lg ">
+        <p className="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-3 w-72 sm:w-96 text-lg rounded-tl-3xl rounded-br-3xl">
           <h1 className="text-black font-semibold text-2xl mb-2 underline underline-offset-4">
-            Hello I'm a page {data.id}
+            Hello I'm a page {id} {/*  {data.id} */}
           </h1>
-          {data.body}
+          {body}
+          {/* {data.body} */}
         </p>
       </div>
       <div className="relative w-full flex flex-col justify-end min-h-screen">
